@@ -37,7 +37,7 @@
               <v-card class="my-2" v-for="article in dummyArticles" :key="article.id">
                 <v-card-title primary-title>
                   <div>
-                    <div class="headline">{{article.title}}</div>
+                    <div class="headline accent--text">{{article.title}}</div>
                     <span v-html="$options.filters.highlight(article.text, query)">{{article.text}}</span>
                   </div>
                   <br>

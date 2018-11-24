@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-app>
-      <v-toolbar app>
+      <v-toolbar app class="primary white--text">
         <app-header></app-header>
       </v-toolbar>
         <v-content>
@@ -9,7 +9,7 @@
             <router-view></router-view>
           </v-container>
         </v-content>
-      <v-footer app>
+      <v-footer app class="secondary white--text">
         <app-footer></app-footer>
       </v-footer>
     </v-app>

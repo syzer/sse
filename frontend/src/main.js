@@ -8,7 +8,13 @@ import App from './App'
 import router from './router'
 
 Vue.use(Vuetify, {
-  iconfont: 'mdi'
+  iconfont: 'mdi',
+  theme: {
+    primary: '#009688',
+    secondary: '#0CC1E8',
+    accent: '#FF5200',
+    error: '#F44336'
+  }
 })
 
 Vue.config.productionTip = false
