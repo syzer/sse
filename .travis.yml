@@ -13,7 +13,12 @@ install:
     - sudo apt-get update
     - pip install --upgrade pip
     - pip install -r requirements.txt
-    - python setup.py install
+    - pip install -e .
+
+notifications:
+    slack:
+      rooms:
+        - baselhacksse:lwDGe9AVT0e5Go4JEA9sYe3Y#allgemein
 
 script:
     - pytest --doctest-modules
