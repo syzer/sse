@@ -4,3 +4,4 @@ django-classy-settings
 pytest
 pytest-cov
 python-dotenv
+requests
