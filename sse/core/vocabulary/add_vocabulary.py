@@ -77,7 +77,9 @@ def main():
 
     folder_name = prepare_data(args.zip_filepath)
 
-    dataframe = pd.read_csv(path.join(folder_name, args.concepts_filename), sep=args.seperator).dropna(subset=["concept_name"])
+    dataframe = pd.read_csv(
+        path.join(folder_name, args.concepts_filename), sep=args.seperator
+    ).dropna(subset=["concept_name"])
 
     # Assert we have the same amount of concept names and ids.
     assert len(dataframe["concept_name"] == dataframe["concept_id"])
