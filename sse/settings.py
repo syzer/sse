@@ -15,11 +15,18 @@ class Base:
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     DATABASE_ENGINE = cbs.env(None, key='DJANGO_DATABASE_ENGINE')
     DATABASE_NAME = cbs.env(None, key='DJANGO_DATABASE_NAME')
+    HAYSTACK_CONNECTIONS = {
+        "default": {
+            "ENGINE": "haystack.backends.whoosh_backend.WhooshEngine",
+            "PATH": os.path.join(os.path.dirname(__file__), "whoosh_index")
+        }
+    }
     INSTALLED_APPS = [
         'django.contrib.auth',
         'django.contrib.contenttypes',
         'django.contrib.sessions',
         'django.contrib.messages',
+        'haystack',
         'sse',
         'sse.core',
     ]
