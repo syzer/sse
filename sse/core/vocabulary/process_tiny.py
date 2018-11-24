@@ -29,9 +29,8 @@ if __name__ == "__main__":
     tiny_automaton = Automaton()
 
     for concept_name, concept_id in zip(df["concept_name"], df["concept_id"]):
-        print(concept_name, concept_id)
         concept_hashmap[concept_name].append(str(concept_id))
-        tiny_automaton.add_word(concept_name, (concept_id, concept_name))
+        tiny_automaton.add_word(concept_name, (0, concept_name))
 
     with open(path.join(DATA_PATH, "processed", "concept_map.json"), "w") as json_file:
         json.dump(concept_hashmap, json_file)
