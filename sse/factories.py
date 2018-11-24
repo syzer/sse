@@ -22,8 +22,9 @@ class EntityFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = models.Entity
 
-    concept_code = 1
+    concept_code = '1'
     domain = factory.SubFactory(DomainFactory)
+    omop_id = 1
 
     @factory.post_generation
     def articles(self, create, extracted, **kwargs):
