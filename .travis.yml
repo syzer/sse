@@ -1,0 +1,27 @@
+language: python
+python:
+    - "3.7"
+
+os:
+    - linux
+
+dist: xenial
+
+sudo: true
+
+install:
+    - sudo apt-get update
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+    - pip install -e .
+
+notifications:
+    slack:
+      rooms:
+        - baselhacksse:lwDGe9AVT0e5Go4JEA9sYe3Y#allgemein
+
+script:
+    - pytest
+
+after_success:
+    - coveralls
