@@ -1,0 +1,24 @@
+language: python
+python:
+    - "3.5"
+
+os:
+    - linux
+
+dist: xenial
+
+sudo: true
+
+install:
+    - sudo apt-get update
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+    - python setup.py install
+    - pip install pytest-cov
+    - pip install coveralls
+
+script:
+    - pytest --doctest-modules
+
+after_success:
+    - coveralls
