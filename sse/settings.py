@@ -21,6 +21,7 @@ class Base:
         'django.contrib.sessions',
         'django.contrib.messages',
         'sse',
+        'sse.core',
     ]
     LANGUAGE_CODE = 'en-us'
     MIDDLEWARE = [
