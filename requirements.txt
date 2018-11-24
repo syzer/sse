@@ -1,7 +1,7 @@
 Django
 coveralls
 django-classy-settings
-django-haystack
+drf-haystack
 numpy
 pandas
 pyahocorasick
