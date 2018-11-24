@@ -6,7 +6,7 @@ DESCRIPTION = "Semantic Search Engine for PubMed"
 LONG_DESCRIPTION = ""
 URL = "https://github.com/escodebar/sse"
 license = "GPL"
-VERSION = "0.0.1"
+VERSION = "1.0"
 
 PROJECT_ROOT = dirname(realpath(__file__))
 REQUIREMENTS_FILE = path_join(PROJECT_ROOT, "requirements.txt")
