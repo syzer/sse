@@ -38,7 +38,7 @@
                 <v-card-title primary-title>
                   <div>
                     <div class="headline secondary--text">{{article.title}}</div>
-                    <span v-html="$options.filters.highlight(article.text, query)">{{article.text}}</span>
+                    <span v-html="$options.filters.highlight($options.filters.truncateAbstract(article.text), query)">{{article.text | truncateAbstract | highlight(query)}}</span>
                   </div>
                   <v-spacer></v-spacer>
                   <div class="grey--text text-xs-right">
@@ -109,6 +109,12 @@ export default {
           text = text.replace(element, '<span class=\'highlighting\'>' + element + '</span>')
         })
         return text
+      }
+    },
+    truncateAbstract (value) {
+      if (value.length > 200) {
+        value = value.substring(0, 199) + '...'
+        return value
       }
     }
   }
