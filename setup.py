@@ -5,7 +5,7 @@ NAME = "sse"
 DESCRIPTION = "Semantic Search Engine for PubMed"
 LONG_DESCRIPTION = ""
 URL = "https://github.com/escodebar/sse"
-license = "MIT"
+license = "GPL"
 VERSION = "0.0.1"
 
 PROJECT_ROOT = dirname(realpath(__file__))
