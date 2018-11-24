@@ -21,6 +21,7 @@ class Base:
         'django.contrib.sessions',
         'django.contrib.messages',
         'sse',
+        'sse.core',
     ]
     LANGUAGE_CODE = 'en-us'
     MIDDLEWARE = [
@@ -72,8 +73,14 @@ class API(Base):
     ROOT_URLCONF = 'api.urls'
     WSGI_APPLICATION = 'api.wsgi.application'
 
-class Development(Base):
+
+class Testing(Base):
     ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
+
+
+class Development(Testing):
+    pass
+
 
 MODE = os.environ['DJANGO_MODE']
 cbs.apply(MODE, globals())

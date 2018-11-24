@@ -21,7 +21,7 @@ notifications:
         - baselhacksse:lwDGe9AVT0e5Go4JEA9sYe3Y#allgemein
 
 script:
-    - pytest --doctest-modules
+    - pytest
 
 after_success:
     - coveralls
