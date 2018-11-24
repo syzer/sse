@@ -15,6 +15,11 @@ install:
     - pip install -r requirements.txt
     - pip install -e .
 
+notifications:
+    slack:
+      rooms:
+        - baselhacksse:lwDGe9AVT0e5Go4JEA9sYe3Y#allgemein
+
 script:
     - pytest --doctest-modules
 
