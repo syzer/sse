@@ -1,3 +1,6 @@
+Django
+coveralls
+django-classy-settings
 pytest
 pytest-cov
-coveralls
+python-dotenv

@@ -3,3 +3,5 @@ lib/
 lib64
 pyvenv.cfg
 sse_api.egg-info/
+sse.db
+__pycache__

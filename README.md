@@ -18,5 +18,11 @@ To setup the API, create a Python virtual environment and install the backend.
 ```shell
 $ git clone git@github.com/escodebar/sse.git && cd sse
 $ python3 -m venv . && source bin/activate
-$ (see) python3 -m pip install -e .
+$ (sse) python3 -m pip install -e . -r requirements.txt -c constraints.txt
+$ (sse) python3 manage.py migrate
+```
+
+Then run the server with:
+```shell
+$ (sse) python3 manage.py runserver
 ```
