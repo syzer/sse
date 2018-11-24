@@ -37,11 +37,13 @@
               <v-card class="my-2" v-for="article in dummyArticles" :key="article.id">
                 <v-card-title primary-title>
                   <div>
-                    <div class="headline accent--text">{{article.title}}</div>
+                    <div class="headline secondary--text">{{article.title}}</div>
                     <span v-html="$options.filters.highlight(article.text, query)">{{article.text}}</span>
                   </div>
-                  <br>
-                  <span class="grey--text">{{article.date}}</span>
+                  <v-spacer></v-spacer>
+                  <div class="grey--text text-xs-right">
+                    {{article.date}}
+                  </div>
                 </v-card-title>
             </v-card>
               <!-- END OF RESULTS DISPLAY -->
@@ -115,6 +117,6 @@ export default {
 
 <style>
 .highlighting {
-  background-color: yellow;
+  background-color: #FFAB91;
 }
 </style>
