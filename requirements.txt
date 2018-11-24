@@ -7,3 +7,4 @@ pyahocorasick
 pytest
 pytest-cov
 python-dotenv
+requests
