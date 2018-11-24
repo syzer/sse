@@ -27,6 +27,13 @@ class Entity(models.Model):
     vocabulary_id = models.TextField()
 
 
+class Match(models.Model):
+    article = models.ForeignKey('Article', on_delete=models.PROTECT)
+    entity = models.ForeignKey('Entity', on_delete=models.PROTECT)
+    length = models.IntegerField()
+    offset = models.IntegerField()
+
+
 class Tag(models.Model):
     articles = models.ManyToManyField('Article')
     description = models.TextField()
