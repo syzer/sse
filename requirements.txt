@@ -1,6 +1,9 @@
 Django
 coveralls
 django-classy-settings
+numpy
+pandas
+pyahocorasick
 pytest
 pytest-cov
 python-dotenv
