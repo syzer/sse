@@ -80,7 +80,7 @@ export default {
         {id: 3, title: 'Title of dummy article', text: 'Lorem rat dolor sit amet, yeast sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet...', date: '12 March 1977', show: false},
         {id: 4, title: 'Title of fake article', text: 'Lorem ipsum hydrolic pressure sit amet, consetetur sadipscing elitr, sed diam LSD eirmod tempor invidunt ut hair loss et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet...', date: '25 November 2018', show: false},
         {id: 5, title: 'Title of medical article', text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet...', date: '22 March 2001', show: false},
-        {id: 6, title: 'Title of article about diabetes', text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed aspirin nonumy eirmod tempor invidunt ut labore et dolore magna yeast erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet...', date: '09 November 2017', show: false},
+        {id: 6, title: 'Title of article about diabetes', text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed aspirin nonumy eirmod tempor invidunt ut labore et dolore magna yeast erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet...', date: '09 January 2017', show: false},
         {id: 7, title: 'Title of last article', text: 'Lorem ipsum dolor sit amet, hair loss sadipscing leukemia, sed diam rat eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet...', date: '30 January 2017', show: false}
       ],
       query: '',
@@ -100,9 +100,9 @@ export default {
           name: 'Date',
           children: [
             { id: 2, name: 'Today' },
-            { id: 3, name: 'November' },
-            { id: 4, name: '2018' },
-            { id: 5, name: '< 2018' }
+            { id: 3, name: 'January 2018' },
+            { id: 4, name: 'January 2017' },
+            { id: 5, name: 'May' }
           ]
         },
         {
@@ -131,21 +131,13 @@ export default {
       if (index >= 0) this.randomMedicalWords.splice(index, 1)
     },
     filteredDate (selectedFilter, id) {
-      for (let i = 0; i < selectedFilter.length; i++) {
-        if (selectedFilter[i] === 'Today') {
-          if (this.dummyArticles[id].date.includes('25 November 2018')) {
-            this.dummyArticles[id].show = true
-          } else {
-            this.dummyArticles[id].show = false
-          }
-        }
-        if (selectedFilter[i] === 'November') {
-          if (this.dummyArticles[id].date.includes('November')) {
-            this.dummyArticles[id].show = true
-          } else {
-            this.dummyArticles[id].show = false
-          }
-        }
+      if ((selectedFilter.includes('Today') && this.dummyArticles[id].date.includes('25 November 2018')) ||
+      (selectedFilter.includes('January 2018') && this.dummyArticles[id].date.includes('January 2018')) ||
+      (selectedFilter.includes('January 2017') && this.dummyArticles[id].date.includes('January 2017')) ||
+      (selectedFilter.includes('May') && this.dummyArticles[id].date.includes('May'))) {
+        this.dummyArticles[id].show = true
+      } else {
+        this.dummyArticles[id].show = false
       }
       return true
     }
